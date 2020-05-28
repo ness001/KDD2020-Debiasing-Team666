@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="8d0cd995-bc49-4bfc-89c4-a6e4267fed58" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/Qualification/Qualification.py" beforeDir="false" afterPath="$PROJECT_DIR$/Qualification/Qualification.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Semi-Finals/underline_trainning/Step1 itemCF_based_on_Apriori/1_generate_user_logs.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/Semi-Finals/underline_trainning/Step1 itemCF_based_on_Apriori/1_generate_user_logs.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Semi-Finals/underline_trainning/Step1 itemCF_based_on_Apriori/2_generate_hot_table.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/Semi-Finals/underline_trainning/Step1 itemCF_based_on_Apriori/2_generate_hot_table.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Semi-Finals/underline_trainning/Step1 itemCF_based_on_Apriori/3_generate_original_matrix_0.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/Semi-Finals/underline_trainning/Step1 itemCF_based_on_Apriori/3_generate_original_matrix_0.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Semi-Finals/underline_trainning/Step1 itemCF_based_on_Apriori/7_generate_recall.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/Semi-Finals/underline_trainning/Step1 itemCF_based_on_Apriori/7_generate_recall.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Semi-Finals/underline_trainning/Step2 Generate_feature_for_Ranking/1_generate_static_features.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/Semi-Finals/underline_trainning/Step2 Generate_feature_for_Ranking/1_generate_static_features.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Semi-Finals/underline_trainning/Step2 Generate_feature_for_Ranking/3_generate_time_feature.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/Semi-Finals/underline_trainning/Step2 Generate_feature_for_Ranking/3_generate_time_feature.ipynb" afterDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf />
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>、、</find>
+      <find>itemCount_male_w</find>
+    </findStrings>
+    <replaceStrings>
+      <replace>、、</replace>
+      <replace>\\</replace>
+    </replaceStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/Qualification/Qualification.py" />
+        <option value="$PROJECT_DIR$/Semi-Finals/underline_trainning/Step2 Generate_feature_for_Ranking/1_generate_static_features.ipynb" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1936" />
+    <option name="height" value="1176" />
+  </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="CIKM-2019-AnalytiCup" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CIKM-2019-AnalytiCup" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CIKM-2019-AnalytiCup" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CIKM-2019-AnalytiCup" type="462c0819:PsiDirectoryNode" />
+              <item name="Qualification" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="8d0cd995-bc49-4bfc-89c4-a6e4267fed58" name="Default" comment="" />
+      <created>1590287627447</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1590287627447</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1936" height="1176" extended-state="6" />
+    <layout>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Version Control" order="7" />
+      <window_info anchor="bottom" id="Python Console" order="7" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="bottom" id="Terminal" order="7" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info active="true" anchor="bottom" id="Find" order="1" visible="true" weight="0.32958034" />
+    </layout>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/Semi-Finals/underline_trainning/Step2 Generate_feature_for_Ranking/1_generate_static_features.ipynb">
+      <provider selected="true" editor-type-id="ipnb-editor">
+        <state>
+          <selected id="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Qualification/Qualification.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="9" column="70" selection-start-line="9" selection-start-column="70" selection-end-line="9" selection-end-column="70" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Semi-Finals/underline_trainning/Step2 Generate_feature_for_Ranking/1_generate_static_features.ipynb">
+      <provider selected="true" editor-type-id="ipnb-editor">
+        <state>
+          <selected id="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Semi-Finals/underline_trainning/Step2 Generate_feature_for_Ranking/3_generate_time_feature.ipynb">
+      <provider selected="true" editor-type-id="ipnb-editor">
+        <state>
+          <selected id="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Semi-Finals/underline_trainning/Step1 itemCF_based_on_Apriori/2_generate_hot_table.ipynb">
+      <provider selected="true" editor-type-id="ipnb-editor">
+        <state>
+          <selected id="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Qualification/Qualification.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1296">
+          <caret line="54" selection-start-line="54" selection-end-line="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="24">
+          <caret line="1" column="30" selection-start-line="1" selection-start-column="13" selection-end-line="1" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>
