@@ -107,6 +107,7 @@ for c in range(now_phase + 1):
         # find most popular items
 top50_click = whole_click['item_id'].value_counts().index[:50].values
 top50_click = ','.join([str(i) for i in top50_click])
+top50_click.to_csv('')
 
 recom_df = pd.DataFrame(recom_item, columns=['user_id', 'item_id', 'sim'])
 result = get_predict(recom_df, 'sim', top50_click)
