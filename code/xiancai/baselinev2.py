@@ -97,8 +97,8 @@ def get_predict(rec_df, pred_col, top_50_clicks):
 
 if __name__ == '__main__':
     current_phase = 6
-    train_path = '../data/underexpose_train/'
-    test_path = '../data/underexpose_test/'
+    train_path = '../../data/underexpose_train/'
+    test_path = '../../data/underexpose_test/'
     rec_items = []
 
     whole_click = pd.DataFrame()
@@ -198,6 +198,6 @@ if __name__ == '__main__':
     # print("score:", evaluate_score[0], '\n')
 
     time_str = time.strftime("%Y-%m-%d_%H_%M_%S", time.localtime())
-    file_name = './underexpose_submit{time_str}.csv'.format(time_str=time_str)
+    file_name = '../../prediction_result/underexpose_submit{time_str}.csv'.format(time_str=time_str)
     result.to_csv(file_name, index=False, header=None)
 
