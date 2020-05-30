@@ -27,12 +27,13 @@ def get_sim_item(df_, user_col, item_col, use_iif=False):
                 if not use_iif:
                     if loc1 - loc2 > 0:
                         sim_item[item][relate_item] += 1 * 0.7 * (0.8 ** (loc1 - loc2 - 1)) * (
-                                    1 - (t1 - t2) * 10000) / math.log(1 + len(items))  # 逆向 ???
+                            1 - (t1 - t2) * 10000) / math.log(1 + len(items))  # 逆向 ???
                     else:
                         sim_item[item][relate_item] += 1 * 1.0 * (0.8 ** (loc2 - loc1 - 1)) * (
-                                    1 - (t2 - t1) * 10000) / math.log(1 + len(items))  # 正向
+                            1 - (t2 - t1) * 10000) / math.log(1 + len(items))  # 正向
                 else:
-                    sim_item[item][relate_item] += 1 / math.log(1 + len(items)) #???
+                    sim_item[item][relate_item] += 1 / \
+                        math.log(1 + len(items))  # ???
 
     sim_item_corr = sim_item.copy()  # 引入AB的各种被点击次数
     for i, related_items in tqdm(sim_item.items()):
@@ -49,13 +50,13 @@ def recommend(sim_item_corr, user_item_dict, user_id, top_k, item_num):
     '''
     rank = {}
     interacted_items = user_item_dict[user_id]
-    interacted_items = interacted_items[::-1] #该user关联的商品
+    interacted_items = interacted_items[::-1]  # 该user关联的商品
     for loc, i in enumerate(interacted_items):
-        a=sorted(sim_item_corr[i].items(), reverse=True) #该商品关联的商品
+        a = sorted(sim_item_corr[i].items(), reverse=True)  # 该商品关联的商品
         for j, wij in sorted(sim_item_corr[i].items(), reverse=True)[0:top_k]:
             if j not in interacted_items:
                 rank.setdefault(j, 0)
-                rank[j] += wij * (0.7 ** loc)# ???
+                rank[j] += wij * (0.7 ** loc)  # ???
 
     return sorted(rank.items(), key=lambda d: d[1], reverse=True)[:item_num]
 
@@ -72,7 +73,8 @@ def get_predict(df, pred_col, top_fill):
     df = df.append(fill_df)
     df.sort_values(pred_col, ascending=False, inplace=True)
     df = df.drop_duplicates(subset=['user_id', 'item_id'], keep='first')
-    df['rank'] = df.groupby('user_id')[pred_col].rank(method='first', ascending=False)
+    df['rank'] = df.groupby('user_id')[pred_col].rank(
+        method='first', ascending=False)
     df = df[df['rank'] <= 50]
     df = df.groupby('user_id')['item_id'].apply(lambda x: ','.join([str(i) for i in x])).str.split(',',
                                                                                                    expand=True).reset_index()
@@ -94,10 +96,12 @@ for c in range(now_phase + 1):
 
     all_click = click_train.append(click_test)
     whole_click = whole_click.append(all_click)
-    whole_click = whole_click.drop_duplicates(subset=['user_id', 'item_id', 'time'], keep='last')
+    whole_click = whole_click.drop_duplicates(
+        subset=['user_id', 'item_id', 'time'], keep='last')
     whole_click = whole_click.sort_values('time')
 
-    item_sim_list, user_item = get_sim_item(whole_click, 'user_id', 'item_id', use_iif=False)
+    item_sim_list, user_item = get_sim_item(
+        whole_click, 'user_id', 'item_id', use_iif=False)
 
     for i in tqdm(click_test['user_id'].unique()):
         rank_item = recommend(item_sim_list, user_item, i, 500, 500)
