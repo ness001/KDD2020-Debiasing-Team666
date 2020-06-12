@@ -1,0 +1,12 @@
+对于code for underline_data
+recall_itemcf_for_train.py recall_usercf_for_train.py recall_w2v_for_train.py 训练集三路召回
+merge_for_train.py 合并
+get_cosin_similarity_for_train.py  txt_vec和img_vec相似度
+
+recall_itemcf_for_test.py recall_usercf_for_test.py recall_w2v_for_test.py 测试集三路召回
+merge_for_test.py 合并
+get_cosin_similarity_for_test.py  txt_vec和img_vec相似度
+
+train_xgboost.py 训练xgboost, 对训练集训练，线下测试集做预测
+eval_alone.py 评估单个召回
+eval_after_merge_rank.py 评估xgboost对线下测试集排序后的召回
