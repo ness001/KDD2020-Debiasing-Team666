@@ -52,7 +52,6 @@ def recommend(sim_item_corr, user_item_dict, user_id, top_k, item_num):
     interacted_items = user_item_dict[user_id]
     interacted_items = interacted_items[::-1]  # 该user关联的商品
     for loc, i in enumerate(interacted_items):
-        a = sorted(sim_item_corr[i].items(), reverse=True)  # 该商品关联的商品
         for j, wij in sorted(sim_item_corr[i].items(), reverse=True)[0:top_k]:
             if j not in interacted_items:
                 rank.setdefault(j, 0)
