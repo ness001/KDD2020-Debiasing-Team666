@@ -2,6 +2,14 @@ For https://tianchi.aliyun.com/competition/entrance/231785/information
 
 # KDD Cup 2020 Challenges for Modern E-Commerce Platform: Debiasing
 
+Team build-success, former Team666.
+
+Four team members
+
+
+
+
+
 ## 数据特征
 
 The files are in CSV format, with UTF-8 encoding. The columns of the CSV files can be:
