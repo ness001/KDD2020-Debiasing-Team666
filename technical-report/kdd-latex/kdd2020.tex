@@ -1,0 +1,294 @@
+%%
+%% This is file `sample-manuscript.tex',
+%% generated with the docstrip utility.
+%%
+%% The original source files were:
+%%
+%% samples.dtx  (with options: `manuscript')
+%% 
+%% IMPORTANT NOTICE:
+%% 
+%% For the copyright see the source file.
+%% 
+%% Any modified versions of this file must be renamed
+%% with new filenames distinct from sample-manuscript.tex.
+%% 
+%% For distribution of the original source see the terms
+%% for copying and modification in the file samples.dtx.
+%% 
+%% This generated file may be distributed as long as the
+%% original source files, as listed above, are part of the
+%% same distribution. (The sources need not necessarily be
+%% in the same archive or directory.)
+%%
+%% The first command in your LaTeX source must be the \documentclass command.
+%%%% Small single column format, used for CIE, CSUR, DTRAP, JACM, JDIQ, JEA, JERIC, JETC, PACMCGIT, TAAS, TACCESS, TACO, TALG, TALLIP (formerly TALIP), TCPS, TDSCI, TEAC, TECS, TELO, THRI, TIIS, TIOT, TISSEC, TIST, TKDD, TMIS, TOCE, TOCHI, TOCL, TOCS, TOCT, TODAES, TODS, TOIS, TOIT, TOMACS, TOMM (formerly TOMCCAP), TOMPECS, TOMS, TOPC, TOPLAS, TOPS, TOS, TOSEM, TOSN, TQC, TRETS, TSAS, TSC, TSLP, TWEB.
+% \documentclass[acmsmall]{acmart}
+
+%%%% Large single column format, used for IMWUT, JOCCH, PACMPL, POMACS, TAP, PACMHCI
+% \documentclass[acmlarge,screen]{acmart}
+
+%%%% Large double column format, used for TOG
+% \documentclass[acmtog, authorversion]{acmart}
+
+%%%% Generic manuscript mode, required for submission
+%%%% and peer review
+\documentclass[manuscript,noacm]{acmart}
+\usepackage{float}
+
+\settopmatter{printacmref=false} % Removes citation information below abstract
+\renewcommand\footnotetextcopyrightpermission[1]{} % removes footnote with conference information in first column
+\pagestyle{plain} % removes running headers
+
+
+% %% \BibTeX command to typeset BibTeX logo in the docs
+% \AtBeginDocument{%
+%   \providecommand\BibTeX{{%
+%     \normalfont B\kern-0.5em{\scshape i\kern-0.25em b}\kern-0.8em\TeX}}}
+
+%% Rights management information.  This information is sent to you
+%% when you complete the rights form.  These commands have SAMPLE
+%% values in them; it is your responsibility as an author to replace
+%% the commands and values with those provided to you when you
+%% complete the rights form.
+% \setcopyright{acmcopyright}
+% \copyrightyear{2018}
+% \acmYear{2018}
+% \acmDOI{10.1145/1122445.1122456}
+
+% %% These commands are for a PROCEEDINGS abstract or paper.
+% \acmConference[Woodstock '18]{Woodstock '18: ACM Symposium on Neural
+%   Gaze Detection}{June 03--05, 2018}{Woodstock, NY}
+% \acmBooktitle{Woodstock '18: ACM Symposium on Neural Gaze Detection,
+%   June 03--05, 2018, Woodstock, NY}
+% \acmPrice{15.00}
+% \acmISBN{978-1-4503-XXXX-X/18/06}
+
+
+%%
+%% Submission ID.
+%% Use this when submitting an article to a sponsored event. You'll
+%% receive a unique submission ID from the organizers
+%% of the event, and this ID should be used as the parameter to this command.
+%%\acmSubmissionID{123-A56-BU3}
+
+%%
+%% The majority of ACM publications use numbered citations and
+%% references.  The command \citestyle{authoryear} switches to the
+%% "author year" style.
+%%
+%% If you are preparing content for an event
+%% sponsored by ACM SIGGRAPH, you must use the "author year" style of
+%% citations and references.
+%% Uncommenting
+%% the next command will enable that style.
+%%\citestyle{acmauthoryear}
+
+%%
+%% end of the preamble, start of the body of the document source.
+\begin{document}
+
+%%
+%% The "title" command has an optional parameter,
+%% allowing the author to define a "short title" to be used in page headers.
+\title{4-track Recommending Models along with GBDT Ranking}
+
+%%
+%% The "author" command and its associated commands are used to define
+%% the authors and their affiliations.
+%% Of note is the shared affiliation of the first two authors, and the
+%% "authornote" and "authornotemark" commands
+%% used to denote shared contribution to the research.
+
+\author{Li Liang}
+\affiliation{%
+  \institution{Shanghai University of Finance and Economics}
+  \country{China}}
+
+\author{YongGui Luo}
+\affiliation{%
+  \institution{Peking University}
+  \country{China}}
+
+\author{HuiLing Cai}
+\affiliation{%
+  \institution{Tongji University}
+  \country{China}}
+  
+\author{KaiCun Wu}
+\affiliation{%
+  \institution{Southeast University}
+  \country{China}}
+
+%% By default, the full list of authors will be used in the page
+%% headers. Often, this list is too long, and will overlap
+%% other information printed in the page headers. This command allows
+%% the author to define a more concise list
+%% of authors' names for this purpose.
+% \renewcommand{\shortauthors}{Trovato and Tobin, et al.}
+
+%%
+%% The abstract is a short summary of the work to be presented in the
+%% article.
+% \begin{abstract}
+%  abstract
+% \end{abstract}
+
+%%
+%% The code below is generated by the tool at http://dl.acm.org/ccs.cfm.
+%% Please copy and paste the code instead of the example below.
+%%
+\begin{CCSXML}
+<ccs2012>
+   <concept>
+       <concept_id>10002951.10003227.10003351.10003269</concept_id>
+       <concept_desc>Information systems~Collaborative filtering</concept_desc>
+       <concept_significance>500</concept_significance>
+       </concept>
+   <concept>
+       <concept_id>10010147.10010257.10010321.10010333.10010076</concept_id>
+       <concept_desc>Computing methodologies~Boosting</concept_desc>
+       <concept_significance>500</concept_significance>
+       </concept>
+ </ccs2012>
+\end{CCSXML}
+
+\ccsdesc[500]{Information systems~Collaborative filtering}
+\ccsdesc[500]{Computing methodologies~Boosting}
+
+%%
+%% Keywords. The author(s) should pick words that accurately describe
+%% the work being presented. Separate the keywords with commas.
+\keywords{item2vec, bipartite networks, CatBoost}
+
+
+%%
+%% This command processes the author and affiliation and title
+%% information and builds the first part of the formatted document.
+\maketitle
+
+\section{Introduction}
+% The e-commerce industry played an increasingly more important role in the global market with an estimated 6.54 trillion dollars global e-retail revenues in 2022. Since e-commerce has profound positive impact on from retailer to customers, e-commerce itself is a business pattern benefits all parties. 
+% To achieve better customer experience and higher sale revenues, companies implement recommender systems on their platforms. A slight improve in recommendations can boost revenues greatly, that's why we pursue a fair recommender system with credible performance. This report is aim to explain the 16th solution of KDD Cup 2020 Challenges for Modern E-Commerce Platform: Debiasing. Our team introduced a simple but practical recommending and ranking pipeline with relatively high performance on NDCG@50-full and NDCF@50-rare metrics.
+This report is aim to explain the 16th solution of KDD Cup 2020 Challenges for Modern E-Commerce Platform: Debiasing.
+
+\section{Method}
+\subsection{Item-Based CF}
+CF (collaborative filtering) is a classic recommending solution which works by building a user-item co-occurrence matrix. Traditional CF algorithm is a user-based nearest neighbour algorithm which searches for neighbour users for the target user\cite{goldberg1992using}. However, with millions of user and relatively sparse items interacted by each user, this method has the defects of high computational cost and poor customization.
+
+
+Item-Based CF bypasses those problems by a two-step process. First, it analyzes the user-item matrix to identify relations between items by similarity calculation. Second, based on the calculation result and history interactions of the target user, it cumulatively computes the prediction scores for items haven't been interacted with yet\cite{sarwar2001item}. The top-$N$ recommendations are given by sorting the prediction scores.
+
+
+
+\subsection{Item2Vec}
+Skip-gram with Negative Sampling (SGNS), also known as Word2Vec, is a neural word embedding method\cite{mikolov2013distributed}. The method aims at finding words representation that captures the implicit relations between words in a corpus. It was shown to provide state-of-the-art results on various linguistics tasks. For details, SGNS aims at maximizing the following term:
+\begin{equation}
+\label{eq1}
+\frac{1}{K} \sum_{i=1}^{K} \sum_{j \neq i}^{K} \log p\left(w_{j} | w_{i}\right),
+\end{equation}
+\begin{equation}
+\label{eq2}
+p\left(w_{j} | w_{i}\right)=\frac{\exp \left(u_{i}^{T} v_{j}\right)}{\sum_{k \in I_{V}} \exp \left(u_{i}^{T} v_{k}^{T}\right)},
+\end{equation}
+where $K$ is the length of a sequence of words, $c$ is the context window size and $w_{i}$ stands for a word at position $i$.
+
+
+Inspired by the achievement in the field of NLP, Item2Vec which incorporates embedding ideas into item-based CF was developed for inferring item-to-item latent relations even when the users' information is not available. Each user's item interaction history can be seen as a "sentence" and each item is a "word". Each pair of items sharing the same set is treated as a positive example. Item2Vec replaces the softmax function from Eq.\eqref{eq2} with:
+\begin{equation}
+p\left(w_{j} | w_{i}\right)=\sigma\left(u_{i}^{T} v_{j}\right) \prod_{k=1}^{N} \sigma\left(-u_{i}^{T} v_{k}\right).
+\end{equation}
+where $N$ is a parameter that determines the number of negative examples to be drawn from a positive example, $\sigma(x)=1 / 1+\exp (-x)$, $u_{i} \in U\left(\subset \mathbb{R}^{m}\right)$ and $v_{i} \in V\left(\subset \mathbb{R}^{m}\right)$ are latent
+vectors that correspond to the target and context representations for the word $w_{i} \in W,$ respectively,
+$I_{W} \triangleq\{1, \ldots,|W|\}$\cite{barkan2016item2vec}.
+
+
+
+\subsection{Bipartite Network based Inference}
+Bipartite Network (BiNe) is a subset of complex networks with bipartite graph structure which only allows the connections between nodes from two disjoint and independent sets. Many real life connections can be modeled as a bipartite network, for example, the relationship between readers and books can be generalized as a BiNe. However, with the traditional one-mode projection method, the edges between too nodes are unweighted which inevitably leads to information loss.
+
+BiNe was applied to personalized recommendation for the first time in 2007 along with a new projection method\cite{zhou2007bipartite}. With this new resource allocation based weighting projection method we can not only overcome the information loss but also naturally give out recommendations. The weighted result matrix has two precious properties. First, the weighted matrix is not symmetrical and the node having larger degree in the BiNe generally assigns smaller weights to its incident edges. Second, the diagonal element in the weighted matrix is positive, which makes the weighted one-mode projection more informative\cite{zhou2007bipartite}.
+
+
+
+\subsection{CatBoost}
+Catboost is a machine-learning algorithm based on Gradient Boosting Decision Tree (GBDT). It is good at handling categorical features and does well in reducing over-fitting. Decision tree is a tree structure in which each internal node represents a judgment on an attribute while each branch represents a judgment on a output, and each leaf node represents a classification. Gradient Boosting is an ensemble technique that combines weaker models (base predictors) via a greedy procedure that corresponds to gradient descent in a function space. Unlike bagging ensemble, all base predictors are strongly related in gradient boosting.
+
+Catboost has some features that are different from other GBDT models like LightGBM and XGBoost. First, it uses symmetric tree as base predictor to help avoid over-fitting, increase reliability. Second, it handles categorical features in a special way as it calculates the frequency of occurrence of a category to generate new numerical features and make combinations between features. When constructing the first node, only one feature is selected. To the second node, it will try to combine the existing node and any others categorical features and choose the best of the pairs. Third, it presents an solution to avoid the "biased point-wise gradient estimates". Model $M_{i}$ is built using all training sets (except for the i-th data), and then a correction tree  $\Delta M$ is built using the 1st to i-1st data and accumulates to the original model $M_{i}$\cite{dorogush2018catboost:}.
+
+
+\section{Results}
+We trained 4 models for each phase separately for recommending part, and trained a classification model based on phase 1-5's data for ranking part. Top-500 items were recalled on every track of recommending. The last-click records were filter out for all users as the offline test set.
+\subsection{Recommending}
+In our implementation, altogether two different Item-Based CF models were trained as two of four tracks. We used cosine-based similarity to do basic calculations. Also, four different penalties were added to active users for the sake of debiasing:
+\begin{itemize}
+    \item penalty to distance, the further the less relevant
+    \item penalty to length of item list, the longer the less valuable
+    \item penalty to negative orientation
+    \item penalty to hot items
+\end{itemize}
+
+The difference between those two tracks was that one of them only computed with 20 items window and the other didn't limit the window. Also, there were some slight numerical difference on penalty computation equations.
+
+% Please add the following required packages to your document preamble:
+% \usepackage[normalem]{ulem}
+% \useunder{\uline}{\ul}{}
+\begin{table}[H]
+\caption{Specified parameters of Word2Vec}
+
+\begin{tabular}{c p{8cm} c}
+\toprule
+Parameters    & Description & Value \\
+\midrule
+iter          & Number of iterations (epochs) over the corpus. & 60    \\
+alpha         & The initial learning rate. & 0.025 \\
+seed          & Seed for the random number generator & 42    \\
+min\_count    & Ignores all words with total frequency lower than this. & 1     \\
+window        & Maximum distance between the current and predicted word within a sentence. & 99999 \\
+sg & Training algorithm: 1 for skip-gram; otherwise CBOW.& 1     \\
+hs & If 1, hierarchical softmax will be used for model training. If 0, and negative is non-zero, negative sampling will be used. & 0     \\
+size & Dimensionality of the word vectors.& 128  \\
+\bottomrule
+\end{tabular}
+\label{w2v}
+\end{table}
+We applied Item2Vec using package \textit{gensim.Word2Vec} to both train and test dataset as the third track model. All custom parameters are shown in Table \ref{w2v}. During fine tuning, we found the \textit{alpha} parameter was the key for expecting a good performance. The forth track was bipartite network based inference. We incorporated ideas from BiNe projection to generate an asymmetry weight dictionary between items. The weight $w_{ij}$ can be interpreted as the strength of item $i$ to a user provided he has clicked item $j$. According to the first property mentioned in Mehod part, $w_{ij}$ is unlikely equal to $w_{ji}$ which is consistent with intuition and hot items will be recommended with lower probability which is pertinent to the goal of debiasing.
+
+
+
+\subsection{Ranking}
+
+By merging all recall results as a dataframe, the ranking task was converted to a binary classification problem. Positive label identified the predicted item was equal to true item. Since the negative samples were overly excessive, we sub-sampled to 50 items. Feature engineering can be summarized to two parts. The first part was the rank and score from the preceding 4-track recommendations. The second part included numerical combination of feature vectors and similarity of text and image vectors. We filtered out the target user’s recalled item and the user’s last one, last two and last three click item and calculated similarity though those vectors.
+
+\begin{table}[H]
+\caption{Specified Parameters for CatBoost}
+
+\begin{tabular}{c p{6cm} c}
+\toprule
+Parameter& Description& Value\\
+\midrule
+iterations     & maximum number of base tree predictors & 20\\ 
+learning\_rate & control the speed for parameters update & 0.1\\ 
+loss\_function & Specific loss function to minimize & 'logloss'   \\ 
+class\_weights & class weights for samples & {[}1, 20{]} \\ 
+custom\_metric &  Metric values to output during training & ‘F1’\\ 
+\bottomrule
+\end{tabular}
+\label{catboost}
+\end{table}
+
+Parameters of the CatBoost model are shown in Table \ref{catboost}.  By comparing the loss function curves and F1 score for training set data and test set data, we set iterations=20 for early-stopping. With class\_weights=[1,20], model can get a better F1 score in the case of unbalanced positive and negative samples.
+
+% \subsection{Feature Importance}
+
+\section{Conclusion and Discussion}
+The e-commerce industry plays an increasingly more important role in the global market with an estimated 6.54 trillion dollars global revenues in 2022. To achieve better customer experience and higher sale revenues, companies implement recommender systems. A slight improve in recommendations can boost revenues greatly, that's why we pursue a fair recommender system with credible performance. Our team's solution is a combination of multi-track recommending and GBDT ranking, which is simple but practical. It achieved relatively high performance on \textit{NDCG@50} and \textit{hitrate@50} metrics. Actually, we have tried other models like item-item CF, hybrid models and Matrix Factorization etc. Unfortunately, results of this trails were far from satisfying. Due to the limitation of computation resources and time distribution, we can imagine there are still opportunities to improve.
+
+\bibliographystyle{ACM-Reference-Format}
+\bibliography{ref}
+
+
+\end{document}
+\endinput
+%%
+%% End of file `sample-manuscript.tex'.

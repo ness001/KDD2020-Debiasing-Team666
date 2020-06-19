@@ -1,0 +1,128 @@
+reply.txt
+
+- 每一路召回的trick（比如种子，针对Debiasing加的惩罚项，算式上的改动...）
+	: penalty1:
+        对距离惩罚，距离越远，相关性越小
+    : penalty2:
+        对list长度惩罚，长度越长，对共现的价值越小
+    : penalty3: float
+        对seq方向惩罚，方向为正 不惩罚，否则惩罚
+        1表示不惩罚
+    : penalty4:
+        对item出现次数做惩罚，出现越多，对共现的价值越小
+
+- 召回融合的流程 
+	就是排序的过程
+
+- 人为构造的特征列表和构造方法
+def fe(df):
+    for i in tqdm('rank score'.split()):
+        df[f'{i}1_sub_{i}2'] = df[f'{i}_1']-df[f'{i}_2']
+        df[f'{i}1_add_{i}2'] = df[f'{i}_1']+df[f'{i}_2']
+        df[f'{i}1_mul_{i}2'] = df[f'{i}_1']*df[f'{i}_2']
+
+        df[f'{i}1_sub_{i}3'] = df[f'{i}_1']-df[f'{i}_3']
+        df[f'{i}1_add_{i}3'] = df[f'{i}_1']+df[f'{i}_3']
+        df[f'{i}1_mul_{i}3'] = df[f'{i}_1']*df[f'{i}_3']
+
+        df[f'{i}1_sub_{i}4'] = df[f'{i}_1']-df[f'{i}_4']
+        df[f'{i}1_add_{i}4'] = df[f'{i}_1']+df[f'{i}_4']
+        df[f'{i}1_mul_{i}4'] = df[f'{i}_1']*df[f'{i}_4']
+
+        df[f'{i}2_sub_{i}3'] = df[f'{i}_2']-df[f'{i}_3']
+        df[f'{i}2_add_{i}3'] = df[f'{i}_2']+df[f'{i}_3']
+        df[f'{i}2_mul_{i}3'] = df[f'{i}_2']*df[f'{i}_3']
+
+        df[f'{i}2_sub_{i}4'] = df[f'{i}_2']-df[f'{i}_4']
+        df[f'{i}2_add_{i}4'] = df[f'{i}_2']+df[f'{i}_4']
+        df[f'{i}2_mul_{i}4'] = df[f'{i}_2']*df[f'{i}_4']
+
+        df[f'{i}3_sub_{i}4'] = df[f'{i}_3']-df[f'{i}_4']
+        df[f'{i}3_add_{i}4'] = df[f'{i}_3']+df[f'{i}_4']
+        df[f'{i}3_mul_{i}4'] = df[f'{i}_3']*df[f'{i}_4']
+        
+        df[f'{i}1_add_{i}2_add_{i}3'] = df[f'{i}_1']+df[f'{i}_2']+df[f'{i}_3']
+        df[f'{i}1_mul_{i}2_mul_{i}3'] = df[f'{i}_1']*df[f'{i}_2']*df[f'{i}_3']
+        
+        df[f'{i}1_add_{i}2_add_{i}4'] = df[f'{i}_1']+df[f'{i}_2']+df[f'{i}_4']
+        df[f'{i}1_mul_{i}2_mul_{i}4'] = df[f'{i}_1']*df[f'{i}_2']*df[f'{i}_4']
+        
+        df[f'{i}4_add_{i}2_add_{i}3'] = df[f'{i}_4']+df[f'{i}_2']+df[f'{i}_3']
+        df[f'{i}4_mul_{i}2_mul_{i}3'] = df[f'{i}_4']*df[f'{i}_2']*df[f'{i}_3']
+        
+        df[f'{i}1_add_{i}2_add_{i}3_add_{i}4'] = df[f'{i}_1']+df[f'{i}_2']+df[f'{i}_3']+df[f'{i}_4']
+        df[f'{i}1_mul_{i}2_mul_{i}3_mul_{i}4'] = df[f'{i}_1']*df[f'{i}_2']*df[f'{i}_3']*df[f'{i}_4']
+        
+
+    df['sim1_text_img'] = df['sim1_text'] *  df['sim1_img']
+    df['sim2_text_img'] = df['sim2_text'] *  df['sim2_img']
+    df['sim3_text_img'] = df['sim3_text'] *  df['sim3_img']
+
+    df['sim12_text'] = df['sim1_text'] + df['sim2_text']
+    df['sim123_text'] = df['sim1_text'] + df['sim2_text'] + df['sim3_text']
+
+    df['sim12_img'] = df['sim1_img'] + df['sim2_img']
+    df['sim123_img'] = df['sim1_img'] + df['sim2_img'] + df['sim3_img']
+
+    df['sim12_text_img'] = df['sim1_text_img'] + df['sim2_text_img']
+    df['sim123_text_img'] = df['sim1_text_img'] + df['sim2_text_img'] + df['sim3_text_img']
+    
+    return df
+- 最终版本的catboost的参数
+params = {
+        'iterations': 20,
+        'learning_rate': 0.1,
+        'random_seed': 144,
+        'custom_metric': 'F1',
+        'loss_function': 'Logloss',
+        'class_weights': [1, 20],
+        }
+
+- 所有phase线下测试集上的四个指标结果（可以给我文字，*也可以给我一个list对象，大家觉得有必要做个折线图说明一下吗？）
+只有一个召回
+2020-06-03 14:55:11.593 | INFO     | __main__:val1:19 - recall50:0.14332784184514002
+2020-06-03 14:55:11.596 | INFO     | __main__:val1:19 - recall100:0.21636463481603516    
+
+
+- catboost输出的feature importance的前10个
+这个需要重新训练模型，时间允许的话明天晚上提供
+
+
+第一路itemcf
+Window: 20   只算Window 20以内的items共现
+penalty1:
+        对距离惩罚，距离越远，相关性越小
+ vt /= np.sqrt(np.log2(distance+1))
+penalty2:
+        对list长度惩罚，长度越penpenal长，对共现的价值越小
+ vt /= np.log10(len(items_)+9)
+penalty3: float
+        对seq方向惩罚，方向为正 不惩罚，否则惩罚
+ vt *= 0.9
+penalty4:
+        对item出现次数做惩罚，出现越多，对共现的价值越小
+ train_data_matrix[r,c] /= (np.log(item_num_dict[items[r]]+1)*np.log(item_num_dict[items[c]]+1))
+
+第二路itemcf
+和第一路itemcf区别
+没有考虑window
+考虑的惩罚项内容相同， 参数不同，
+if loc1 - loc2 > 0:
+    sim_item[item][relate_item] += 1 * 0.7 * (0.8 ** (loc1 - loc2 - 1)) * (
+                1 - (t1 - t2) * 10000) / math.log(1 + len(items))  # 逆向
+else:
+    sim_item[item][relate_item] += 1 * 1.0 * (0.8 ** (loc2 - loc1 - 1)) * (
+                1 - (t2 - t1) * 10000) / math.log(1 + len(items))  # 正向
+第三路 recall_from_bipartite_network
+参照开源的，没有修改
+
+第四路 recall_from_word2vec                 
+
+recall_from_word2vec(
+                        args.topk, all_click_df[phase][2].user_id.tolist(), user_items,phase
+                        ,dim=128
+                        ,epochs=60
+                        ,learning_rate=0.025, mode=mode
+                        )
+
+
